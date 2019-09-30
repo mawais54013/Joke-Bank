@@ -30,4 +30,11 @@ class JokeTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let joke = jokes[indexPath.row]
+        
+        performSegue(withIdentifier: "moveToJokeDefinition", sender: joke)
+    }
 }
